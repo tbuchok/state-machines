@@ -22,7 +22,7 @@ function Sandwich() {
   this.currentState = null;
 }
 Sandwich.prototype.edge = function(action) {
-  this.currentState = this[action]() || this.currentState;
+  this.currentState = (this[action]) ? this[action]() : this.currentState;
 }
 Sandwich.prototype.addBread = function addBread() {
   var state = this.currentState;
